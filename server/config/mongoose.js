@@ -8,4 +8,20 @@ module.exports = function(config){
     db.once('open', function callback(){
         console.log('DB connection established');
     });
+
+    var userSchema = mongoose.Schema({
+        firstName :String,
+        lastName :String,
+        userName :String
+    });
+
+    var User = mongoose.model('User',userSchema);
+
+    User.find({}).exec(function(err,collection){
+        if(collection.length===0){
+            User.create({firstName:'Avinash',lastname:'Verma',userName:'avin45h'});
+            User.create({firstName:'Avinash1',lastname:'Verma1',userName:'avin45h1'});
+            User.create({firstName:'Avinash2',lastname:'Verma2',userName:'avin45h2'});
+        }
+    });
 };
