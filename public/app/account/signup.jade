@@ -1,0 +1,27 @@
+.container
+    .well
+        form.form-horizontal(name="signUpForm")
+            fieldset
+                legend New User Information
+                    .form-group
+                        .label.col-md-2.control-label(for="email") Email
+                        .col-md-10
+                            input.form-control(name="email",type="email",placeholder="email",ng-model="email")
+                    .form-group
+                        .label.col-md-2.control-label(for="password") Password
+                        .col-md-10
+                            input.form-control(name="password",type="password",placeholder="password",ng-model="password")
+                    .form-group
+                        .label.col-md-2.control-label(for="firstName") First Name
+                        .col-md-10
+                            input.form-control(name="firstName",type="text",placeholder="First Name",ng-model="firstName")
+                    .form-group
+                        .label.col-md-2.control-label(for="lastName") Last Name
+                        .col-md-10
+                            input.form-control(name="lastName",type="text",placeholder="Last Name",ng-model="lastName")
+                    .form-group
+                        .col-md-10
+                            .pull-right
+                                button.btn.btn-primary(ng-click="signUp()", ng-disabled="signUpForm.$inValid") Submit
+                                | &nbsp;
+                                a.btn.btn-default(href="/") Cancel
